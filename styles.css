@@ -1,0 +1,812 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container.page2 {
+    margin-bottom: 260px;
+}
+  
+.container.page4,
+.container.page5 {
+  width: 100%;
+  max-width: 1400px;
+  margin: 20px 30px; /* Add margin */
+  padding-right:0; /* Add padding */
+  padding-left: 30px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+  
+.container header {
+    display: grid;             /* Enable grid layout */
+    place-items: center;       /* Center content both horizontally and vertically */
+    height: 150px;             /* Set a fixed height for the header */
+    color: rgb(0, 0, 0);              /* White text color */
+    text-align: center;        /* Center-align the text inside h1 */
+    padding: 0;                /* Remove extra padding */
+    margin: 0;   
+    background:#f8f9fa
+}
+
+.container header h2 {
+    font-size: 36px; 
+    margin: 0; 
+  }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background:#f8f9fa;
+    color: #000000;
+    line-height: 2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Fade animation styles */
+body {
+    opacity: 1; /* Start fully visible */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+body.fade-in {
+    opacity: 1; /* Fade-in effect */
+}
+
+body.fade-out {
+    opacity: 0; /* Fade-out effect */
+}
+
+
+/* Header Section */
+header {
+    background-color: rgb(255, 255, 255);
+    padding: 0px 0; /* Space around the header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Style */
+.logo {
+    text-align: left; /* Ensures the logo aligns to the left */
+    margin-left: 150px; /* Optional: Adds some spacing from the left edge */
+    padding-left: 50px;
+}
+
+.logo img {
+    width: 600px; /* Adjust the size of the logo */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Ensures proper alignment behavior */
+}
+
+
+/* Navigation */
+nav {
+    align-items: center;/* Space between logo and navigation */
+        background-color: #006b54; /* Set background color for the box */
+        padding: 20px 45px; /* Add padding inside the box */
+        border-radius: 8px; /* Optional: Adds rounded corners to the box */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+        margin: 20px auto; /* Centers the box */
+        width: auto; /* Adjust width as needed */
+        max-width: 1000px; /* Optional: Sets a max width for the box */
+}
+
+nav ul {
+    display: flex;
+    justify-content: right;
+    gap: 40px;
+    padding-right: 0px;
+    
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect with bouncing animation */
+nav ul li a:hover {
+    color: #000000; /* Highlight color on hover */
+    
+}
+/* Line that appears on hover */
+nav ul li a {
+    position: relative;
+    text-decoration: none; /* Ensure no underline is present */
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Line thickness */
+    background-color: #000000; /* Line color */
+    transition: width 0.3s ease-in-out; /* Smooth line appearance */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+
+
+/* Bounce animation */
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.cta-button {
+    background-color: #006b54;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #014133;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 1600px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stacks logo and navigation vertically */
+        align-items: center; /* Centers both items */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stacks nav links vertically */
+        gap: 15px; /* Adjust spacing for smaller screens */
+    }
+
+    .logo img {
+        width: 120px; /* Reduces logo size for smaller screens */
+    }
+}
+
+
+
+/* Hero Section - First Page Only */
+#first-page #home {
+    background-image: url('assets/bg.png'); /* Path to your image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0; /* Adjust padding to give space inside the section */
+    color: rgb(0, 0, 0); /* Optional, makes text more visible if the image is dark */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text inside the hero content */
+    height: 80vh; /* Keeps section height at 70% of the viewport */
+}
+
+#first-page .hero-overlay {
+    padding: 50px 0;
+}
+
+#first-page .hero-content h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#first-page .hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+#first-page .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #006b54; /* Button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 30px; /* Rounded corners */
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#first-page .cta-button:hover {
+    background-color: #014133; /* Darker color on hover */
+}
+
+/* Styling for each clickable box - First Page Only */
+#first-page .box {
+    width: 30%; /* Make each box 30% of the container's width */
+    padding: 30px 40px; /* Larger padding for bigger boxes */
+    background-color: #006b54; /* Same color */
+    color: white; /* White text color */
+    border-radius: 30px; /* Rounded corners */
+    font-size: 30px; /* Larger text size */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a 3D effect */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+    display: inline-block; /* Ensure the anchor tag behaves like a block element */
+    text-decoration: none; /* Remove underline from the link */
+    margin-bottom: 20px; /* Space between boxes */
+}
+
+#first-page .box:hover {
+    background-color: #014133; /* Darker green when hovered */
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+/* Styling for the bottom box (same size as the first two) - First Page Only */
+#first-page .bottom-box {
+    width: 30%; /* Same width as the first two boxes */
+    background-color: #006b54;
+    padding: 30px 40px;
+    border-radius: 30px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#first-page .bottom-box:hover {
+    background-color: #014133; /* Darker green when hovered */
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+/* Ensure boxes are displayed on two rows (first two in the top row, last one below) - First Page Only */
+#first-page .boxes-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows boxes to wrap into the next line if needed */
+    justify-content: center; /* Center the boxes horizontally */
+    gap: 40px; /* Space between boxes */
+    margin-top: -70px; /* Reduces the space above the boxes */
+    padding-top: 20px; /* Adds some padding above the boxes */
+}
+
+
+
+.about-us {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 100vh; /* Full viewport height */
+    background-color: #f9f9f9; /* Light background */
+    padding: 20px; /* Add spacing around content */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.about-us .container {
+    background-color: #ffffff; /* White background for the content box */
+    padding: 40px; /* Spacing inside the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 800px; /* Limit the maximum width */
+    width: 100%; /* Allow responsiveness */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.about-us h2 {
+    font-size: 2.5rem; /* Prominent heading size */
+    color: #006b54; /* Eye-catching blue color */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Ensure the heading is centered */
+}
+
+.about-us p {
+    font-size: 1rem; /* Standard readable font size */
+    color: #555; /* Neutral gray for text */
+    margin-bottom: 20px; /* Space between paragraphs */
+    text-align: justify; /* Justify the text for a clean look */
+}
+
+.about-us p:last-of-type {
+    margin-bottom: 0; /* Remove margin for the last paragraph */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-us h2 {
+        font-size: 2rem; /* Adjust heading size for smaller screens */
+    }
+
+    .about-us p {
+        font-size: 0.9rem; /* Adjust text size for smaller screens */
+    }
+}
+
+
+
+.service-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.service-card {
+    background: #006b54;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Background with transparency */
+    backdrop-filter: blur(5px); /* Blur effect */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Start with 0 opacity */
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in */
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1; /* Fully visible when active */
+    pointer-events: auto; /* Enable interaction */
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    color: #333;
+    position: relative;
+    transform: scale(0.8); /* Start slightly smaller */
+    transition: transform 0.3s ease; /* Smooth scale-up effect */
+}
+
+.modal.show .modal-content {
+    transform: scale(1); /* Grow to full size when active */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #ff0000; /* Red on hover */
+}
+
+.map-boxes {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    gap: 20px; /* Adds space between map boxes */
+    justify-content: space-between; /* Align boxes evenly */
+    margin-top: 30px;
+}
+
+.map-box {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(33.33% - 20px); /* Three maps in a row */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack header and iframe */
+    align-items: center;
+}
+
+.map-box h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.map-box iframe {
+    width: 100%; /* Ensure iframe fills the box width */
+    height: 300px; /* Adjust the height as needed */
+    border: 0;
+    border-radius: 8px; /* Matches box styling */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .map-box {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+.feedback-card {
+    background: #006b54;
+    color: #ffffff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feedback-card:hover {
+    transform: translateX(10px);
+}
+
+/* Style for the FAQs header */
+#faq h1 {
+    font-size: 36px; /* Adjust font size */
+    color: #006b54;  /* Change text color */
+    text-align: center; /* Center-align the header */
+    font-weight: bold;  /* Make the text bold */
+    padding: 20px 0;  /* Add padding above and below the header */
+    font-family: 'Poppins', sans-serif; /* Change the font-family */
+}
+/* Apply margin to the entire FAQ section */
+#faq-page .faqs {
+    margin-bottom: 100px !important;  /* Add more space between the FAQ section and footer */
+    padding-bottom: 50px; /* Optional: Add internal padding inside the section for some spacing */
+}
+
+/* Apply margin to each FAQ item */
+#faq-page .faq-item {
+    margin:0 ; /* Adjust space between FAQ items */
+    margin-bottom: 30px; /* More space between FAQ items */
+}
+
+/* Existing .faq-item styles (to keep them consistent) */
+.faq-item {
+    background-color: #006b54;
+    color: #ffffff;
+    padding: 30px;
+    margin: 20px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.faq-item:hover {
+    background-color: #014133;
+    transform: translateY(-5px);
+}
+
+
+
+/* Contact Section Styles */
+.contact-section {
+    background-color: #f8f9fa;
+    color: #3b3b3b;
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #111;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* Contact Info Section */
+.contact-info {
+    flex: 1;
+    max-width: 40%;
+    background-color: #006b54;
+    color: #fff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #014133;
+    background-color: #006b54;
+   
+}
+.contact-item a {
+    position: relative;
+    text-decoration: none; /* Ensure no underline is present */
+}
+.contact-item a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Line thickness */
+    background-color: #014133; /* Line color */
+    transition: width 0.3s ease-in-out; /* Smooth line appearance */
+}
+.contact-item a:hover:after {
+    width: 100%; /* Full width on hover */
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Icons */
+.contact-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .contact-info h3 {
+        font-size: 20px;
+    }
+
+    .contact-item p {
+        font-size: 16px;
+    }
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 55%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form .cta-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #006b54;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form .cta-button:hover {
+    background-color: #014133;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        max-width: 100%;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #111; /* Dark background color */
+    color: #fff; /* Text color */
+    padding: 30px 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Contact Section */
+.footer-contact {
+    flex: 1;
+    max-width: 40%;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.footer-contact p {
+    margin: 10px 0;
+}
+
+.footer-contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Message Section */
+.footer-message {
+    flex: 1;
+    max-width: 50%;
+}
+
+.footer-message form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-message textarea {
+    width: 100%;
+    height: 80px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: #222;
+    color: #fff;
+    resize: none;
+}
+
+.footer-message textarea::placeholder {
+    color: #aaa;
+}
+
+.footer-message .cta-button {
+    width: fit-content;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #006b54;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+
+.footer-message .cta-button:hover {
+    background-color: #014133;
+}
+/* Copyright Section */
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+}
