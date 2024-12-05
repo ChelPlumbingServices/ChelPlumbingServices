@@ -11,57 +11,53 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MDJ6ZCG9');</script>
-<!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDJ6ZCG9');</script>
+    <!-- End Google Tag Manager -->
 
- <!-- Event snippet for Call Mobile conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-     <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-16711185415/UwseCK2goPMZEIfowaA-', 'event_callback': callback }); return false; } 
-     </script>
-
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-
+    <!-- AMP Analytics (Google Ads Conversion Tracking) -->
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDJ6ZCG9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDJ6ZCG9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Google Ads Conversion Tracking -->
+    <!-- Google Ads Conversion Tracking (AMP Analytics) -->
     <amp-analytics type="gtag" data-credentials="include">
-      <script type="application/json">
-      {
-        "vars": {
-          "gtag_id": "AW-16711185415", 
-          "config": {
-            "AW-16711185415": { "groups": "default" }
-          }
-        },
-        "triggers": {
-          "trackPhoneClick": {
-            "on": "click",
-            "selector": ".call-link",
+        <script type="application/json">
+        {
             "vars": {
-              "event_name": "conversion",
-              "send_to": ["AW-16711185415/UwseCK2goPMZEIfowaA-"]
+                "gtag_id": "AW-16711185415", 
+                "config": {
+                    "AW-16711185415": { "groups": "default" }
+                }
+            },
+            "triggers": {
+                "trackPhoneClick": {
+                    "on": "click",
+                    "selector": ".call-link",
+                    "vars": {
+                        "event_name": "conversion",
+                        "send_to": ["AW-16711185415/UwseCK2goPMZEIfowaA-"]
+                    }
+                }
             }
-          }
         }
-      }
-      </script>
+        </script>
     </amp-analytics>
-    
+
+    <!-- Header Section -->
     <header>
         <div class="logo">
-            <!-- Replace 'logo.png' with the actual path to your logo image -->
             <img src="assets/logo.png" alt="Chel Plumbing Services Logo">
         </div>
-         <nav>
+        <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -69,30 +65,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li><a href="faqs.html">FAQs</a></li>
                 <li><a href="contact.html">Contacts</a></li>
             </ul>
-         </nav>
+        </nav>
     </header>
 
-
-</html>
-<body id="first-page">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-overlay">
             <div class="hero-content">
                 <h2>Professional Plumbing & Siphoning Services</h2>
                 <p>Your trusted partner for home and business solutions across Metro Manila and beyond.</p>
-                <a href="tel:09364223071" class="cta-button">Call Us Now</a>
+                <a href="tel:09364223071" class="cta-button call-link">Call Us Now</a>
             </div>
         </div>
     </section>
 
-<!-- New Box Section with Links -->
-<div class="boxes-container">
-    <a href="tel:09364223071" class="box" onclick="return gtag_report_conversion('tel:09364223071');">09364223071</a>
-    <a href="tel:09484146257" class="box" onclick="return gtag_report_conversion('tel:09484146257');">09484146257</a>
-    <a href="mailto:chemalabanansrvcs@gmail.com" class="box bottom-box">Email</a>
-</div>
+    <!-- New Box Section with Links -->
+    <div class="boxes-container">
+        <a href="tel:09364223071" class="box call-link" onclick="return gtag_report_conversion('tel:09364223071');">09364223071</a>
+        <a href="tel:09484146257" class="box call-link" onclick="return gtag_report_conversion('tel:09484146257');">09484146257</a>
+        <a href="mailto:chemalabanansrvcs@gmail.com" class="box bottom-box">Email</a>
+    </div>
 </body>
+
+</html>
+
 
 
 
