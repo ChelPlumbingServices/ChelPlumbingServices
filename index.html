@@ -56,6 +56,33 @@
 </head>
 
 <body>
+
+     <!-- Google tag (gtag.js) with AMP integration -->
+    <amp-analytics type="gtag" data-credentials="include">
+        <script type="application/json">
+        {
+            "vars": {
+                "gtag_id": "AW-16711185415",
+                "config": {
+                    "AW-16711185415": {
+                        "groups": "default"
+                    }
+                }
+            },
+            "triggers": {
+                "trackConversion": {
+                    "on": "click",
+                    "selector": ".conversion-link", 
+                    "request": "event",
+                    "vars": {
+                        "event_name": "conversion",
+                        "send_to": ["AW-16711185415/AhixCIKIn_MZEIfowaA-"]
+                    }
+                }
+            }
+        }
+        </script>
+    </amp-analytics>
     
     <!-- Header Section -->
     <header>
