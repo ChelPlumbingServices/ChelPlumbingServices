@@ -1,13 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    
-<meta name="google-site-verification" content="BtELXutCiuY-gKk0vhLGxaagkkUnvZ7sIIRxKwfcQ-k" />
+    <meta name="google-site-verification" content="BtELXutCiuY-gKk0vhLGxaagkkUnvZ7sIIRxKwfcQ-k" />
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,41 +14,71 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MDJ6ZCG9');</script>
-<!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDJ6ZCG9');</script>
+    <!-- End Google Tag Manager -->
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16711185415"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16711185415"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16711185415');
+    </script>
 
-  gtag('config', 'AW-16711185415');
-</script>
-
-    <!-- Event snippet for CM conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
+    <!-- Event snippet for CM conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16711185415/AhixCIKIn_MZEIfowaA-',
+            'event_callback': callback
+        });
+        return false;
     }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-16711185415/AhixCIKIn_MZEIfowaA-',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+    </script>
 
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDJ6ZCG9"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google tag (gtag.js) with AMP integration -->
+    <amp-analytics type="gtag" data-credentials="include">
+        <script type="application/json">
+        {
+            "vars": {
+                "gtag_id": "AW-16711185415",
+                "config": {
+                    "AW-16711185415": {
+                        "groups": "default"
+                    }
+                }
+            },
+            "triggers": {
+                "trackConversion": {
+                    "on": "click",
+                    "selector": ".conversion-link", 
+                    "request": "event",
+                    "vars": {
+                        "event_name": "conversion",
+                        "send_to": ["AW-16711185415/AhixCIKIn_MZEIfowaA-"]
+                    }
+                }
+            }
+        }
+        </script>
+    </amp-analytics>
 
 </head>
 
@@ -60,53 +87,22 @@ function gtag_report_conversion(url) {
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <!-- Replace 'logo.png' with the actual path to your logo image -->
             <img src="assets/logo.png" alt="Chel Plumbing Services Logo">
         </div>
-         <nav>
+        <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="contact.html">Contacts</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-         </nav>
+        </nav>
     </header>
 
-    <!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDJ6ZCG9"
-          height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
 
-<!-- Google tag (gtag.js) with AMP integration -->
-<amp-analytics type="gtag" data-credentials="include">
-  <script type="application/json">
-  {
-    "vars": {
-      "gtag_id": "AW-16711185415",
-      "config": {
-        "AW-16711185415": {
-          "groups": "default"
-        }
-      }
-    },
-    "triggers": {
-      "trackConversion": {
-        "on": "click",
-        "selector": ".conversion-link",
-        "request": "event",
-        "vars": {
-          "event_name": "conversion",
-          "send_to": ["AW-16711185415/AhixCIKIn_MZEIfowaA-"]
-        }
-      }
-    }
-  }
-  </script>
-</amp-analytics>
 
 </html>
 <body id="first-page">
