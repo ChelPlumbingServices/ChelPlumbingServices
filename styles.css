@@ -1,53 +1,20 @@
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container.page2 {
-    margin-bottom: 260px;
+/* Container Styling */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 1600px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
-  
-.container.page4,
-.container.page5 {
-  width: 100%;
-  max-width: 1400px;
-  margin: 20px 30px; /* Add margin */
-  padding-right:0; /* Add padding */
-  padding-left: 30px;
-  box-sizing: border-box;
-  margin-bottom: 50px;
-}
-
-@media screen and (max-width: 768px) {
-    .navigation ul li {
-        display: block;
-        margin: 5px 0;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .header h1 {
-        font-size: 20px;
-    }
-}
-
-
-.container header {
-    display: grid;             /* Enable grid layout */
-    place-items: center;       /* Center content both horizontally and vertically */
-    height: 150px;             /* Set a fixed height for the header */
-    color: rgb(0, 0, 0);              /* White text color */
-    text-align: center;        /* Center-align the text inside h1 */
-    padding: 0;                /* Remove extra padding */
-    margin: 0;   
-    background:#f8f9fa
-}
-
-.container header h2 {
-    font-size: 36px; 
-    margin: 0; 
-  }
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -75,11 +42,10 @@ body.fade-out {
     opacity: 0; /* Fade-out effect */
 }
 
-
 /* Header Section */
 header {
     background-color: rgb(255, 255, 255);
-    padding: 0px 0; /* Space around the header */
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,36 +53,43 @@ header {
 
 /* Logo Style */
 .logo {
-    text-align: left; /* Ensures the logo aligns to the left */
-    margin-left: 150px; /* Optional: Adds some spacing from the left edge */
-    padding-left: 50px;
+    text-align: left;
+    margin-left: 10px;
 }
 
 .logo img {
-    width: 600px; /* Adjust the size of the logo */
-    height: auto; /* Maintain the aspect ratio */
-    display: block; /* Ensures proper alignment behavior */
+    width: 600px; /* Default width for large screens */
+    height: auto;
+    transition: width 0.3s ease; /* Smooth transition for logo resizing */
+    display: block;
+}
+
+/* Responsive Styles for Small Screens */
+@media screen and (max-width: 768px) {
+    .logo img {
+        width: 400px; /* Adjust logo size for smaller screens */
+        max-width: 500px;
+    }
+}
+
+/* Extra Responsive Styles for Very Small Screens */
+@media screen and (max-width: 480px) {
+    .logo img {
+        width: 350px; /* Further reduce the logo size for very small screens */
+        max-width: 400px;
+    }
 }
 
 
-/* Navigation */
+/* Navigation Menu Styling */
 nav {
-    align-items: center;/* Space between logo and navigation */
-        background-color: #006b54; /* Set background color for the box */
-        padding: 20px 45px; /* Add padding inside the box */
-        border-radius: 8px; /* Optional: Adds rounded corners to the box */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
-        margin: 20px auto; /* Centers the box */
-        width: auto; /* Adjust width as needed */
-        max-width: 1000px; /* Optional: Sets a max width for the box */
+    align-items: center;
 }
 
 nav ul {
     display: flex;
-    justify-content: right;
-    gap: 40px;
+    gap: 20px;
     padding-right: 0px;
-    
 }
 
 nav ul li {
@@ -124,23 +97,63 @@ nav ul li {
 }
 
 nav ul li a {
-    font-size: 25px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 900;
-    color: #ffffff;
+    color: #006b54;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Hover effect with bouncing animation */
-nav ul li a:hover {
-    color: #000000; /* Highlight color on hover */
-    
+/* Hamburger Menu Icon (for small screens) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
 }
-/* Line that appears on hover */
-nav ul li a {
-    position: relative;
-    text-decoration: none; /* Ensure no underline is present */
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #006b54;
 }
+
+/* Responsive Styles for Small Screens */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #006b54;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        color: #fff;
+        padding: 10px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li a:hover {
+        color: #000000;
+    }
+}
+
+
 
 nav ul li a::after {
     content: "";
@@ -192,31 +205,20 @@ nav ul li a:hover::after {
     background-color: #014133;
 }
 
-.container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 40px;
-    max-width: 1600px;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 50px;
-}
-
 /* Responsive Design for Mobile Screens */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stacks logo and navigation vertically */
-        align-items: center; /* Centers both items */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stacks nav links vertically */
-        gap: 15px; /* Adjust spacing for smaller screens */
+        padding: 0 20px; /* Reduce padding for smaller screens */
+        flex-direction: column; /* Stack logo and navigation vertically */
+        align-items: center; /* Center both items */
+        width: 100%; /* Ensure container takes up full width */
     }
 
     .logo img {
         width: 120px; /* Reduces logo size for smaller screens */
+        max-width: 100%; /* Ensure the logo doesn't overflow */
     }
+
 }
 
 
@@ -227,13 +229,13 @@ nav ul li a:hover::after {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 20px 0; /* Adjust padding to give space inside the section */
-    color: rgb(0, 0, 0); /* Optional, makes text more visible if the image is dark */
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-align: center; /* Center text inside the hero content */
-    height: 80vh; /* Keeps section height at 70% of the viewport */
+    padding: 20px 0;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
 }
 
 #first-page .hero-overlay {
@@ -253,42 +255,42 @@ nav ul li a:hover::after {
 #first-page .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #006b54; /* Button color */
+    background-color: #006b54;
     color: white;
     text-decoration: none;
-    border-radius: 30px; /* Rounded corners */
+    border-radius: 30px;
     font-size: 20px;
     transition: background-color 0.3s ease;
 }
 
 #first-page .cta-button:hover {
-    background-color: #014133; /* Darker color on hover */
+    background-color: #014133;
 }
 
 /* Styling for each clickable box - First Page Only */
 #first-page .box {
     width: 30%; /* Make each box 30% of the container's width */
-    padding: 30px 40px; /* Larger padding for bigger boxes */
-    background-color: #006b54; /* Same color */
-    color: white; /* White text color */
-    border-radius: 30px; /* Rounded corners */
-    font-size: 30px; /* Larger text size */
+    padding: 30px 40px;
+    background-color: #006b54;
+    color: white;
+    border-radius: 30px;
+    font-size: 30px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a 3D effect */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
-    display: inline-block; /* Ensure the anchor tag behaves like a block element */
-    text-decoration: none; /* Remove underline from the link */
-    margin-bottom: 20px; /* Space between boxes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 20px;
 }
 
 #first-page .box:hover {
-    background-color: #014133; /* Darker green when hovered */
-    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    background-color: #014133;
+    transform: scale(1.05);
 }
 
 /* Styling for the bottom box (same size as the first two) - First Page Only */
 #first-page .bottom-box {
-    width: 30%; /* Same width as the first two boxes */
+    width: 30%;
     background-color: #006b54;
     padding: 30px 40px;
     border-radius: 30px;
@@ -300,19 +302,87 @@ nav ul li a:hover::after {
 }
 
 #first-page .bottom-box:hover {
-    background-color: #014133; /* Darker green when hovered */
-    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    background-color: #014133;
+    transform: scale(1.05);
 }
 
 /* Ensure boxes are displayed on two rows (first two in the top row, last one below) - First Page Only */
 #first-page .boxes-container {
     display: flex;
-    flex-wrap: wrap; /* Allows boxes to wrap into the next line if needed */
-    justify-content: center; /* Center the boxes horizontally */
-    gap: 40px; /* Space between boxes */
-    margin-top: -70px; /* Reduces the space above the boxes */
-    padding-top: 20px; /* Adds some padding above the boxes */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: -70px;
+    padding-top: 20px;
 }
+
+/* Mobile-Friendly Changes: Responsive Design */
+
+/* Hero Section */
+@media (max-width: 768px) {
+    #first-page #home {
+        height: 60vh; /* Adjust height for smaller screens */
+        padding: 10px 0; /* Reduce padding */
+    }
+
+    #first-page .hero-content h2 {
+        font-size: 35px; /* Adjust font size */
+    }
+
+    #first-page .hero-content p {
+        font-size: 18px; /* Adjust font size */
+    }
+
+    #first-page .cta-button {
+        padding: 12px 25px; /* Adjust button size */
+        font-size: 18px; /* Adjust font size */
+    }
+
+    #first-page .box, #first-page .bottom-box {
+        width: 100%; /* Make each box 100% on small screens */
+        padding: 20px 30px; /* Adjust padding */
+        font-size: 24px; /* Adjust font size */
+        margin-bottom: 20px; /* Space between boxes */
+    }
+
+    #first-page .boxes-container {
+        flex-direction: column; /* Stack boxes vertically */
+        gap: 20px; /* Reduce gap between boxes */
+        margin-top: 20px; /* Adjust space at the top */
+    }
+}
+
+/* Extra Small Devices - Mobile (Less than 480px) */
+@media (max-width: 480px) {
+    #first-page #home {
+        height: 50vh; /* Further reduce height for very small screens */
+    }
+
+    #first-page .hero-content h2 {
+        font-size: 28px; /* Adjust font size */
+    }
+
+    #first-page .hero-content p {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    #first-page .cta-button {
+        padding: 10px 20px; /* Adjust button size */
+        font-size: 16px; /* Adjust font size */
+    }
+
+    #first-page .box, #first-page .bottom-box {
+        width: 100%; /* Make each box take full width */
+        padding: 15px 20px; /* Adjust padding */
+        font-size: 20px; /* Adjust font size */
+    }
+
+    #first-page .boxes-container {
+        flex-direction: column; /* Stack boxes vertically */
+        gap: 15px; /* Reduce gap between boxes */
+    }
+}
+
 
 
 
@@ -356,6 +426,14 @@ nav ul li a:hover::after {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .about-us {
+        padding: 20px; /* Ensure padding remains consistent on smaller screens */
+    }
+
+    .about-us .container {
+        padding: 20px; /* Reduce padding inside container for smaller screens */
+    }
+
     .about-us h2 {
         font-size: 2rem; /* Adjust heading size for smaller screens */
     }
@@ -365,11 +443,28 @@ nav ul li a:hover::after {
     }
 }
 
+/* Extra Small Devices - Mobile (Less than 480px) */
+@media (max-width: 480px) {
+    .about-us .container {
+        padding: 15px; /* Further reduce padding for very small screens */
+    }
+
+    .about-us h2 {
+        font-size: 1.8rem; /* Further adjust heading size for very small screens */
+    }
+
+    .about-us p {
+        font-size: 0.85rem; /* Further adjust text size */
+    }
+}
 
 
+
+
+/* Service Cards */
 .service-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
     gap: 30px;
 }
 
@@ -389,26 +484,26 @@ nav ul li a:hover::after {
 
 /* Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Background with transparency */
-    backdrop-filter: blur(5px); /* Blur effect */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    opacity: 0; /* Start with 0 opacity */
-    pointer-events: none; /* Prevent interaction when hidden */
-    transition: opacity 0.3s ease; /* Smooth fade-in */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
 .modal.show {
     display: flex;
-    opacity: 1; /* Fully visible when active */
-    pointer-events: auto; /* Enable interaction */
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .modal-content {
@@ -420,12 +515,12 @@ nav ul li a:hover::after {
     text-align: center;
     color: #333;
     position: relative;
-    transform: scale(0.8); /* Start slightly smaller */
-    transition: transform 0.3s ease; /* Smooth scale-up effect */
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
 }
 
 .modal.show .modal-content {
-    transform: scale(1); /* Grow to full size when active */
+    transform: scale(1);
 }
 
 .close-button {
@@ -439,14 +534,33 @@ nav ul li a:hover::after {
 }
 
 .close-button:hover {
-    color: #ff0000; /* Red on hover */
+    color: #ff0000;
 }
 
+/* Mobile-Friendly Adjustments */
+@media (max-width: 768px) {
+    .service-cards {
+        grid-template-columns: 1fr !important; /* Force single column on mobile */
+    }
+
+    .service-card {
+        padding: 20px; /* Adjust padding */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        width: 90%; /* Make modal content a bit wider on mobile */
+    }
+}
+
+
+
+/* Map Boxes */
 .map-boxes {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    gap: 20px; /* Adds space between map boxes */
-    justify-content: space-between; /* Align boxes evenly */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
     margin-top: 30px;
 }
 
@@ -454,10 +568,10 @@ nav ul li a:hover::after {
     background-color: #f1f1f1;
     padding: 20px;
     border-radius: 8px;
-    width: calc(33.33% - 20px); /* Three maps in a row */
+    width: calc(33.33% - 20px); /* Default: 3 boxes per row */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; /* Stack header and iframe */
+    flex-direction: column;
     align-items: center;
 }
 
@@ -468,19 +582,27 @@ nav ul li a:hover::after {
 }
 
 .map-box iframe {
-    width: 100%; /* Ensure iframe fills the box width */
-    height: 300px; /* Adjust the height as needed */
+    width: 100%;
+    height: 300px;
     border: 0;
-    border-radius: 8px; /* Matches box styling */
+    border-radius: 8px;
 }
 
-/* Responsive Design */
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
+    /* Service Cards */
+    .service-cards {
+        grid-template-columns: 1fr 1fr; /* 2 columns for smaller screens */
+    }
+
+    /* Map Boxes */
     .map-box {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%; /* Full width for map boxes on smaller screens */
     }
 }
 
+
+/* Feedback Card */
 .feedback-card {
     background: #006b54;
     color: #ffffff;
@@ -494,28 +616,29 @@ nav ul li a:hover::after {
     transform: translateX(10px);
 }
 
-/* Style for the FAQs header */
+/* FAQs Section */
 #faq h1 {
-    font-size: 36px; /* Adjust font size */
-    color: #006b54;  /* Change text color */
-    text-align: center; /* Center-align the header */
-    font-weight: bold;  /* Make the text bold */
-    padding: 20px 0;  /* Add padding above and below the header */
-    font-family: 'Poppins', sans-serif; /* Change the font-family */
+    font-size: 36px;
+    color: #006b54;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 0;
+    font-family: 'Poppins', sans-serif;
 }
-/* Apply margin to the entire FAQ section */
+
+/* FAQ Page Margin */
 #faq-page .faqs {
-    margin-bottom: 100px !important;  /* Add more space between the FAQ section and footer */
-    padding-bottom: 50px; /* Optional: Add internal padding inside the section for some spacing */
+    margin-bottom: 100px !important;
+    padding-bottom: 50px;
 }
 
-/* Apply margin to each FAQ item */
+/* FAQ Item Margin */
 #faq-page .faq-item {
-    margin:0 ; /* Adjust space between FAQ items */
-    margin-bottom: 30px; /* More space between FAQ items */
+    margin: 0;
+    margin-bottom: 30px;
 }
 
-/* Existing .faq-item styles (to keep them consistent) */
+/* FAQ Item Styling */
 .faq-item {
     background-color: #006b54;
     color: #ffffff;
@@ -530,6 +653,31 @@ nav ul li a:hover::after {
 .faq-item:hover {
     background-color: #014133;
     transform: translateY(-5px);
+}
+
+/* Mobile-Friendly Styles */
+@media (max-width: 768px) {
+    /* Feedback Card */
+    .feedback-card {
+        padding: 15px;  /* Reduce padding for mobile */
+        margin: 10px 0;  /* Reduce margin */
+    }
+
+    /* FAQ Section */
+    #faq h1 {
+        font-size: 28px;  /* Adjust font size for smaller screens */
+    }
+
+    /* FAQ Item */
+    .faq-item {
+        padding: 20px;  /* Adjust padding */
+        margin: 10px;  /* Adjust margin */
+    }
+
+    /* FAQ Items on smaller screens */
+    #faq-page .faqs {
+        margin-bottom: 50px !important;  /* Reduce bottom margin */
+    }
 }
 
 
@@ -824,3 +972,4 @@ footer {
     font-size: 12px;
     color: #aaa;
 }
+
